@@ -24,10 +24,11 @@ set -e
 read -r -d '' ALIAS_BLOCK <<'EOF'
 # -- custom aliases from dotfiles --
 alias ll='ls -lah'
-alias gst='git status'
-alias gc='git commit -v'
-alias gp='git push'
-alias gd='git diff'
+alias gb='git branch'
+alias gc='git checkout'
+alias gp='git pull'
+alias gl='git log'
+alias gprom='git pull --rebase origin main'
 # -- end custom aliases --
 EOF
 
