@@ -1,0 +1,25 @@
+install.sh
+  s_20b4a0ed9b4d6a::t_44c13e100c2bbc 6-8,18-27,34-45
+mcp-servers.sh
+  s_20b4a0ed9b4d6a::t_f0cb70d12b404d 1-48
+post-start-install.sh
+  s_20b4a0ed9b4d6a::t_dcedf76046001f 1-4
+README.md
+  s_20b4a0ed9b4d6a::t_64aee08003cf71 1-11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.9",
+  "base_commit_sha": "473a6621aea29178e2865e7861e14d0c0b3b832b",
+  "prompts": {},
+  "sessions": {
+    "s_20b4a0ed9b4d6a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1efc9f39-73a5-4407-904c-b269af10f936",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Venko Pendev <venelin.pendev@vanta.com>"
+    }
+  }
+}
