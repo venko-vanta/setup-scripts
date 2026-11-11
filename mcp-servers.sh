@@ -37,8 +37,29 @@ add_server() {
   fi
 }
 
+install_plugin() {
+  local plugin="$1" marketplace="$2" marketplace_source="$3" output
+  if ! output="$(timeout 120 "$claude_bin" plugin marketplace add "$marketplace_source" 2>&1)"; then
+    log "failed to add marketplace $marketplace: $output"
+    failed=1
+    return
+  fi
+  if output="$(timeout 180 "$claude_bin" plugin install "$plugin@$marketplace" --scope user 2>&1)"; then
+    log "installed or kept plugin $plugin@$marketplace"
+  else
+    log "failed to install plugin $plugin@$marketplace: $output"
+    failed=1
+  fi
+}
+
+# Slack's MCP server rejects clients that register themselves, so it is set up
+# through Slack's plugin, which carries their OAuth client ID.
 # https://docs.slack.dev/ai/slack-mcp-server/connect-to-harnesses/
-add_server slack https://mcp.slack.com/mcp
+install_plugin slack claude-plugins-official anthropics/claude-plugins-official
+# A plain `slack` server from earlier versions of this script can't sign in.
+if timeout 60 "$claude_bin" mcp remove --scope user slack >/dev/null 2>&1; then
+  log "removed the plain slack server"
+fi
 # https://docs.granola.ai/help-center/sharing/integrations/mcp
 add_server granola https://mcp.granola.ai/mcp
 
