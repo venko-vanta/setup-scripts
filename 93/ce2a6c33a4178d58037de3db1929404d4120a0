@@ -1,0 +1,21 @@
+README.md
+  s_b9c1529473a608::t_44e404d05cdf96 7
+mcp-servers.sh
+  s_b9c1529473a608::t_cde6405f15de0c 40-56,58-62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.9",
+  "base_commit_sha": "93ce2a6c33a4178d58037de3db1929404d4120a0",
+  "prompts": {},
+  "sessions": {
+    "s_b9c1529473a608": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_b9c1529473a608",
+        "model": "unknown"
+      },
+      "human_author": "Venko Pendev <venelin.pendev@vanta.com>"
+    }
+  }
+}
